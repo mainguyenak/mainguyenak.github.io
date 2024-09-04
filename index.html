@@ -531,6 +531,25 @@
       // Thêm các đoạn mã xử lý khác nếu cần
     }
   });
+      document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.key === 'p') {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.key === 'p') {
+        e.preventDefault();
+    }
+});
                   </script>
   </body>
 </html>
