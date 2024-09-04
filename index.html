@@ -512,6 +512,25 @@
             let result = userAnswer === correctAnswer ? "Đúng" : `Sai. Đáp án đúng là: ${correctAnswer}`;
             document.getElementById('resultQ2').innerHTML = result.startsWith("Đúng") ? `<span class="correct">${result}</span>` : `<span class="incorrect">${result}</span>`;
         }
+
+      document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    // Vô hiệu hóa Ctrl + C, Ctrl + U, và Ctrl + S
+    if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) ||
+        (e.key === 'PrintScreen')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('keyup', function(e) {
+    if (e.key === 'PrintScreen') {
+      alert('Chức năng sao chép hoặc chụp màn hình đã bị vô hiệu hóa!');
+      // Thêm các đoạn mã xử lý khác nếu cần
+    }
+  });
                   </script>
   </body>
 </html>
